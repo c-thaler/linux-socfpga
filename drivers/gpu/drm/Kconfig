@@ -106,6 +106,17 @@ config DRM_KMS_CMA_HELPER
 	help
 	  Choose this if you need the KMS CMA helper functions
 
+config DRM_DRIVER_HELPERS
+bool "Enable DRM driver helpers"
+	depends on DRM
+	select DRM_KMS_HELPER
+	select DRM_KMS_CMA_HELPER
+	select VIDEOMODE_HELPERS
+	help
+	  Choose this option if you want to support/develop DRM driver(s)
+	  that make use of the DRM helpers (e.g. KMS_CMA, GEM_CMA, ...)
+
+
 source "drivers/gpu/drm/i2c/Kconfig"
 
 source "drivers/gpu/drm/arm/Kconfig"
