@@ -27,6 +27,9 @@
 
 #define SOCFPGA_A10_RSTMGR_CTRL		0xC
 #define SOCFPGA_A10_RSTMGR_MODMPURST	0x20
+#define SOCFPGA_A10_RSTMGR_PER0MODRST	0x24
+#define SOCFPGA_A10_RSTMGR_PER1MODRST	0x28
+#define SOCFPGA_A10_RSTMGR_BRGMODRST	0x2C
 
 /* System Manager bits */
 #define RSTMGR_CTRL_SWCOLDRSTREQ	0x1	/* Cold Reset */
@@ -43,6 +46,11 @@ void socfpga_init_arria10_ocram_ecc(void);
 #define SYSMGR_SILICON_ID1_REV_MASK 0x0000FFFF
 #define SYSMGR_SILICON_ID1_ID_SHIFT 16
 #define SYSMGR_SILICON_ID1_ID_MASK 0xFFFF0000
+#define SOCFPGA_SYSID_DEFAULT		0x1
+#define SOCFPGA_REVISION_DEFAULT	0x1
+
+/* Sysid register map */
+#define SYSID_ID_REG			0x0
 
 extern void __iomem *sys_manager_base_addr;
 extern void __iomem *rst_manager_base_addr;
